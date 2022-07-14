@@ -13,6 +13,7 @@ public class PriorityQueueMq {
     public static void main(String[] args) throws Exception{
         Channel channel = MqUtil.getChannel();
         Map agr = new HashMap();
+        //设置优先级
         agr.put("x-max-priority",10);
         channel.queueDeclare(PRIORITY_QUEUE,false,false,false,agr);
         for (int i=1;i<=10;i++){
